@@ -4,9 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import team.cms.entity.User;
+import team.cms.entity.enums.Role;
 import team.cms.service.UserService;
 
 import javax.annotation.Resource;
+import java.sql.Date;
 
 @Controller
 public class UserController {
@@ -26,7 +28,7 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public String login(Model model) {
+    public String login() {
         return "login";
     }
 }

@@ -1,27 +1,13 @@
 package team.cms.service;
 
-import org.springframework.stereotype.Service;
 import team.cms.entity.User;
-import team.cms.repository.UserRepository;
-
-import javax.annotation.Resource;
 import java.util.List;
 
-@Service
-public class UserService {
+public interface UserService {
 
-    @Resource
-    UserRepository userRepository;
+    List<User> getUserList();
 
-    public List<User> getUserList() {
-        return userRepository.getUserList();
-    }
+    User getUserListByUserName(String userName);
 
-    public User getUserListByUserName(String userName) {
-        return userRepository.getUserByUserName(userName);
-    }
-
-    public void addUser(User user) {
-        userRepository.addUser(user);
-    }
+    void addUser(User user);
 }

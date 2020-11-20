@@ -1,6 +1,7 @@
 package team.cms.repository;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import team.cms.entity.User;
 
@@ -14,5 +15,5 @@ public interface UserRepository {
 
     User getUserByUserName(String userName);
 
-    void addUser(User user);
+    void addUser(@Param("user") User user);
 }
