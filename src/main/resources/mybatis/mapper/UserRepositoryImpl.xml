@@ -4,7 +4,15 @@
 <mapper namespace="team.cms.repository.UserRepository">
 
     <select id="getUserByName" resultType="team.cms.entity.User">
-        select * form user where name=#{name}
+        select * from user where name=#{name}
     </select>
-
+    <insert id="add">
+        insert into user() values ()
+    </insert>
+    <delete id="removeByName">
+        delete from user where name=#{name};
+    </delete>
+    <update id="updateUser">
+        update user set
+    </update>
 </mapper>

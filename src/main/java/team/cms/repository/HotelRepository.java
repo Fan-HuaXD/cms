@@ -8,4 +8,12 @@ import team.cms.entity.Hotel;
 @Repository
 public interface HotelRepository {
     Hotel getHotelByName(String name);
+
+    void add(int accountId,String name,String address,String decription);
+
+    void add(Hotel hotel);
+
+    void removeByName(String name);
+
+    void updateHotel();
 }

@@ -9,4 +9,13 @@ import team.cms.entity.User;
 @Repository
 public interface UserRepository {
     User getUserByName(String name);
+
+    void add(int acountId,String name,String residentIdNumber,String email,String telephone,
+             String workPlace);
+
+    void add(User user);
+
+    void removeByName(String name);
+
+    void updateUser();
 }
