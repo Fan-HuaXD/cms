@@ -5,18 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import team.cms.entity.enums.Role;
 
-import java.sql.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Account {
+
     private int id;
-    private String userName;
-    private String passWord;
-    private Date birthday;
-    private String telephone;
-    private String email;
+
+    private String name;
+
+    private String password;
+
     private Role role;
 
 }
