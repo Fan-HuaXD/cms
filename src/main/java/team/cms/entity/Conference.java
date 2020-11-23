@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Conference {
     private int id;
-    private int accountId;
+    private int accountId;//根据账户id查找会议发起人的名字；
+    private String hostContactInfo;//发起人的联系方式；
     private String name;
     private String introduction;
     private String address;
