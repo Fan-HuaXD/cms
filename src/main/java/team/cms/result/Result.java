@@ -11,32 +11,31 @@ public class Result<T> {
 
     private boolean success;
 
-    private Integer code;
+    private int code;
 
     private String message;
 
     private T data;
 
     public static <T> Result<T> wrapSuccessfulResult(T data) {
-        Result<T> result = new Result<T>();
-        result.data = data;
-        result.success = true;
-        result.code = 0;
+        Result<T> result = new Result<>();
+        result.setSuccess(true);
+        result.setCode(0);
+        result.setData(data);
         return result;
     }
 
     public static <T> Result<T> wrapSuccessfulResult(String message, T data) {
-        Result<T> result = new Result<T>();
-        result.data = data;
-        result.success = true;
-        result.code = 0;
-        result.message = message;
+        Result<T> result = new Result<>();
+        result.setSuccess(true);
+        result.setCode(0);
+        result.setMessage(message);
+        result.setData(data);
         return result;
     }
 
-
-    public static <T> Result<T> wrapErrorResult(Integer code, String message) {
-        Result<T> result = new Result<T>();
+    public static <T> Result<T> wrapErrorResult(int code, String message) {
+        Result<T> result = new Result<>();
         result.success = false;
         result.code = code;
         result.message = message;

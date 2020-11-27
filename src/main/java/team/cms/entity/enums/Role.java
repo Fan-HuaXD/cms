@@ -1,7 +1,7 @@
 package team.cms.entity.enums;
 
 public enum Role {
-    NORMAL,
+    USER,
     ADMIN,
     HOTEL,
     DRIVER,

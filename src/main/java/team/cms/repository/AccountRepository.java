@@ -10,4 +10,6 @@ public interface AccountRepository {
 
     Account getAccountByName(String name);
 
+    void addAccount(Account account);
+
 }
