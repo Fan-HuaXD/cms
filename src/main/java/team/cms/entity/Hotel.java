@@ -12,5 +12,6 @@ public class Hotel {
     private int acountId;
     private String name;
     private String address;
-    private String decription;
+    private String detail;
+    private String telephone;
 }
