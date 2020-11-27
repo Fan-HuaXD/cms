@@ -5,4 +5,5 @@ import team.cms.entity.Account;
 public interface AccountService {
 
     Account getAccountByUsername(String username);
+
 }
