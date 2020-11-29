@@ -12,7 +12,7 @@ public class Conference {
     private int id;
     private int usrId;
     private String name;
-    private String inviteCode;//发起人的联系方式；
+    private String inviteCode;
     private String detail;
     private String address;
     private String startTime;

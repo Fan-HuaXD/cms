@@ -8,6 +8,8 @@ import team.cms.entity.User;
 @Mapper
 @Repository
 public interface UserRepository {
+    User getUserByAccountId(int accountId);
+
     User getUserByName(String name);
 
     void add(int accountId,String name,String residentIdNumber,String email,String telephone,
