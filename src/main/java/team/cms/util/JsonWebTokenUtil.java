@@ -4,7 +4,6 @@ import io.jsonwebtoken.*;
 import org.bouncycastle.util.encoders.Base64;
 import team.cms.entity.Account;
 import team.cms.result.Result;
-import team.cms.result.ResultCode;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -12,7 +11,7 @@ import java.util.Date;
 
 public class JsonWebTokenUtil {
 
-    final static String JWT_SECRET = "NCU-CS-JAVAWEB";  // 密匙（未加密）
+    final static String JWT_SECRET = "NCUCSJAVAWEB";  // 密匙（未加密）
 
     final static long JWT_TTL = 15L * 24L * 3600L * 1000L;
 
@@ -34,7 +33,7 @@ public class JsonWebTokenUtil {
 
     public static Result<Account> parseJWT(String jwt) {
         if(jwt == null)
-            return Result.wrapErrorResult(ResultCode.JWT_NEEDED, "未携带Token或Token为空");
+            return Result.wrapErrorResult("未携带Token或Token为空");
         Claims claims = null;
         try {
             SecretKey secretKey = generalKey();
@@ -44,9 +43,9 @@ public class JsonWebTokenUtil {
                     .getBody();
             return Result.wrapSuccessfulResult((Account)claims.get("account"));
         } catch (ExpiredJwtException e) {
-            return  Result.wrapErrorResult(ResultCode.JWT_EXPIRED, "Token已过期");
+            return  Result.wrapErrorResult("Token已过期");
         } catch (Exception e) {
-            return Result.wrapErrorResult(ResultCode.JWT_INVALID, "Token不存在");
+            return Result.wrapErrorResult("Token不存在");
         }
     }
 

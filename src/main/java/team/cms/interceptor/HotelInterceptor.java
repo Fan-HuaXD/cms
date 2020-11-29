@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import team.cms.entity.enums.Role;
 import team.cms.result.Result;
-import team.cms.result.ResultCode;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +23,7 @@ public class HotelInterceptor implements HandlerInterceptor {
         } else {
             response.setContentType("text/json");
             PrintWriter out = response.getWriter();
-            out.println(JSON.toJSONString(Result.wrapErrorResult(ResultCode.HTTP_FORBIDDEN, "无访问权限")));
+            out.println(JSON.toJSONString(Result.wrapErrorResult("无访问权限")));
             return false;
         }
     }

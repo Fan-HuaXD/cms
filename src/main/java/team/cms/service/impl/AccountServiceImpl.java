@@ -6,6 +6,7 @@ import team.cms.repository.AccountRepository;
 import team.cms.service.AccountService;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -16,5 +17,20 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account getAccountByUsername(String username) {
         return accountRepository.getAccountByUsername(username);
+    }
+
+    @Override
+    public boolean usernameAvailable(String username) {
+        Account account = getAccountByUsername(username);
+        if(account == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void addAccount(Account account) {
+        accountRepository.addAccount(account);
     }
 }

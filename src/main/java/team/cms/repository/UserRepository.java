@@ -12,10 +12,7 @@ public interface UserRepository {
 
     User getUserByName(String name);
 
-    void add(int accountId,String name,String residentIdNumber,String email,String telephone,
-             String workPlace);
-
-    void add(User user);
+    void addUser(User user);
 
     void removeByName(String name);
 

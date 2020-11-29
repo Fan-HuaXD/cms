@@ -3,13 +3,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="team.cms.repository.UserRepository">
     <select id="getUserByAccountId" resultType="team.cms.entity.User">
-        select * from user where accountId=#{accountId}
+        select * from user where account_id=#{accountId}
     </select>
     <select id="getUserByName" resultType="team.cms.entity.User">
         select * from user where name=#{name}
     </select>
-    <insert id="add">
-        insert into user() values ()
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+        insert into user(account_id, name, gender, birthday, resident_id_number, email, telephone, workplace) values (#{accountId}, #{name}, #{gender}, #{birthday}, #{residentIdNumber}, #{email}, #{telephone}, #{workplace})
     </insert>
     <delete id="removeByName">
         delete from user where name=#{name};

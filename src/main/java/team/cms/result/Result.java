@@ -11,8 +11,6 @@ public class Result<T> {
 
     private boolean success;
 
-    private int code;
-
     private String message;
 
     private T data;
@@ -20,7 +18,6 @@ public class Result<T> {
     public static <T> Result<T> wrapSuccessfulResult(T data) {
         Result<T> result = new Result<>();
         result.setSuccess(true);
-        result.setCode(0);
         result.setData(data);
         return result;
     }
@@ -28,17 +25,15 @@ public class Result<T> {
     public static <T> Result<T> wrapSuccessfulResult(String message, T data) {
         Result<T> result = new Result<>();
         result.setSuccess(true);
-        result.setCode(0);
         result.setMessage(message);
         result.setData(data);
         return result;
     }
 
-    public static <T> Result<T> wrapErrorResult(int code, String message) {
+    public static <T> Result<T> wrapErrorResult(String message) {
         Result<T> result = new Result<>();
-        result.success = false;
-        result.code = code;
-        result.message = message;
+        result.setSuccess(false);
+        result.setMessage(message);
         return result;
     }
 }

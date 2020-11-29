@@ -3,12 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="team.cms.repository.AccountRepository">
-    <insert id="addAccount" useGeneratedKeys="true" keyProperty="account.id">
-        insert into account values (#{account.username}, #{account.password}, #{account.role})
+    <insert id="addAccount" useGeneratedKeys="true" keyProperty="id">
+        insert into account(username, password, role) values (#{username}, #{password}, #{role})
     </insert>
 
     <select id="getAccountByUsername" resultType="team.cms.entity.Account">
-        select * from account where name = #{username}
+        select * from account where username = #{username}
     </select>
 
 </mapper>
