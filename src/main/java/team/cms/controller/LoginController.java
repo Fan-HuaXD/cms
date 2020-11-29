@@ -13,7 +13,7 @@ import team.cms.util.JsonWebTokenUtil;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/api/login")
 public class LoginController {
 
     @Resource

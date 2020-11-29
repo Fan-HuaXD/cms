@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.sql.Date;
 
 @RestController
-@RequestMapping("/register")
+@RequestMapping("/api/register")
 public class RegisterController {
 
     @Resource
