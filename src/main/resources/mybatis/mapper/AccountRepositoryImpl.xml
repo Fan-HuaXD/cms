@@ -7,7 +7,7 @@
         insert into account values (#{account.username}, #{account.password}, #{account.role})
     </insert>
 
-    <select id="getAccountByName" resultType="team.cms.entity.Account">
+    <select id="getAccountByUsername" resultType="team.cms.entity.Account">
         select * from account where name = #{username}
     </select>
 

@@ -8,7 +8,7 @@ import team.cms.entity.Account;
 @Repository
 public interface AccountRepository {
 
-    Account getAccountByName(String name);
+    Account getAccountByUsername(String name);
 
     void addAccount(Account account);
 
