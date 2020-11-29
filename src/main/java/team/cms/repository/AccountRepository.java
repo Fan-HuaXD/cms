@@ -7,7 +7,7 @@ import team.cms.entity.Account;
 @Mapper
 @Repository
 public interface AccountRepository {
-
+    
     Account getAccountByName(String name);
 
     void addAccount(Account account);
