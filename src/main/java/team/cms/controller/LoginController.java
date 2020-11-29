@@ -24,15 +24,18 @@ public class LoginController {
 
         Account account = accountService.getAccountByUsername(username);
 
+        LoginResultData data = new LoginResultData();
+
         if(account == null || !account.getPassword().equals(password) || account.getRole() != role) {
-            return Result.wrapSuccessfulResult("用户名或密码错误！", null);
+            data.setLoginSuccess(false);
         } else {
-            LoginResultData data = new LoginResultData();
+            data.setLoginSuccess(true);
             data.setToken(JsonWebTokenUtil.createJWT(account));
             data.setUsername(username);
             data.setRole(role);
-            return Result.wrapSuccessfulResult(data);
         }
+
+        return Result.wrapSuccessfulResult(data);
     }
 
 }

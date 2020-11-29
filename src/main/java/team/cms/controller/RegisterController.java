@@ -28,9 +28,9 @@ public class RegisterController {
     Result checkUsername(String username) {
 
         if(accountService.usernameAvailable(username)) {
-            return Result.wrapSuccessfulResult("用户名可用", true);
+            return Result.wrapSuccessfulResult(true);
         } else {
-            return Result.wrapSuccessfulResult("用户名已被注册", false);
+            return Result.wrapSuccessfulResult(false);
         }
     }
 
@@ -56,6 +56,6 @@ public class RegisterController {
 
         userService.addUser(user);
 
-        return Result.wrapSuccessfulResult("注册成功！", true);
+        return Result.wrapSuccessfulResult(true);
     }
 }

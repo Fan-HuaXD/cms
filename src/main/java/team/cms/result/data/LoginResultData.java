@@ -10,6 +10,8 @@ import team.cms.entity.enums.Role;
 @NoArgsConstructor
 public class LoginResultData {
 
+    private boolean loginSuccess;
+
     private String token;
 
     private String username;
