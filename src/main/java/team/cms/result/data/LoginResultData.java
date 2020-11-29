@@ -8,14 +8,12 @@ import team.cms.entity.enums.Role;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginResultData<T> {
+public class LoginResultData {
 
     private String token;
 
     private String username;
 
     private Role role;
-
-    private T detail;
 
 }

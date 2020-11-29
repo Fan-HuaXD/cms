@@ -19,18 +19,6 @@ public class LoginController {
     @Resource
     AccountService accountService;
 
-    @Resource
-    UserService userService;
-
-    @Resource
-    AdminService adminService;
-
-    @Resource
-    HotelService hotelService;
-
-    @Resource
-    DriverService driverService;
-
     @PostMapping("/submit")
     Result loginSubmit(Role role, String username, String password) {
 
@@ -43,20 +31,6 @@ public class LoginController {
             data.setToken(JsonWebTokenUtil.createJWT(account));
             data.setUsername(username);
             data.setRole(role);
-            switch (role) {
-                case USER:
-                    data.setDetail(userService.getUserByAccountId(account.getId()));
-                    break;
-                case ADMIN:
-                    data.setDetail(adminService.getAdminByAccountId(account.getId()));
-                    break;
-                case HOTEL:
-                    data.setDetail(hotelService.getHotelByAccountId(account.getId()));
-                    break;
-                case DRIVER:
-                    data.setDetail(driverService.getDriverByAccountId(account.getId()));
-                    break;
-            }
             return Result.wrapSuccessfulResult(data);
         }
     }
