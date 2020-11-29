@@ -10,7 +10,7 @@ import team.cms.entity.enums.Gender;
 @NoArgsConstructor
 public class User {
     private int id;
-    private int acountId;
+    private int accountId;
     private String name;
     private String residentIdNumber;
     private String email;

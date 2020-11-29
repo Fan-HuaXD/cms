@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Hotel {
     private int id;
-    private int acountId;
+    private int accountId;
     private String name;
     private String address;
     private String detail;
