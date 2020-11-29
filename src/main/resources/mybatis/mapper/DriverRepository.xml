@@ -5,6 +5,6 @@
 <mapper namespace="team.cms.repository.DriverRepository">
 
     <select id="getDriverByAccountId" resultType="team.cms.entity.Driver">
-        select * from driver by id=#{accountId}
+        select * from driver by accountId=#{accountId}
     </select>
 </mapper>
