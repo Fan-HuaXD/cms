@@ -8,9 +8,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Admin {
-    private int id;
-    private int accountId;
+
+    private Integer id;
+
+    private Integer accountId;
+
     private String name;
+
     private String telephone;
+
     private String email;
+
 }

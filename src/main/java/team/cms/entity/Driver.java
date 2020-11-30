@@ -9,11 +9,19 @@ import team.cms.entity.enums.Gender;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Driver {
-    private int id;
-    private int accountId;
-    private int fleetId;
+
+    private Integer id;
+
+    private Integer accountId;
+
+    private Integer fleetId;
+
     private String name;
+
     private Gender gender;
+
     private String residentIdNumber;
+
     private String telephone;
+
 }

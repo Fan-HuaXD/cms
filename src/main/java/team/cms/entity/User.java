@@ -12,9 +12,9 @@ import java.sql.Date;
 @NoArgsConstructor
 public class User {
 
-    private int id;
+    private Integer id;
 
-    private int accountId;
+    private Integer accountId;
 
     private String name;
 

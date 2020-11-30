@@ -10,7 +10,7 @@ import team.cms.entity.enums.Role;
 @NoArgsConstructor
 public class Account {
 
-    private int id;
+    private Integer id;
 
     private String username;
 

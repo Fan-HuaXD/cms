@@ -9,18 +9,33 @@ import team.cms.entity.enums.Progress;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Conference {
-    private int id;
-    private int usrId;
+
+    private Integer id;
+
+    private Integer usrId;
+
     private String name;
+
     private String inviteCode;
+
     private String detail;
+
     private String address;
+
     private String startTime;
+
     private String endTime;
-    private String rollTime;
+
+    private String enrollTime;
+
     private String number;
-    private int hotelId;
-    private int fleetId;
-    private int limit;
+
+    private Integer hotelId;
+
+    private Integer fleetId;
+
+    private Integer limit;
+
     private Progress progress ;
 }
+

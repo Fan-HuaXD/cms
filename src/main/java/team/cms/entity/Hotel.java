@@ -8,10 +8,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Hotel {
-    private int id;
-    private int accountId;
+
+    private Integer id;
+
+    private Integer accountId;
+
     private String name;
+
     private String address;
+
     private String detail;
+
     private String telephone;
+
 }
+

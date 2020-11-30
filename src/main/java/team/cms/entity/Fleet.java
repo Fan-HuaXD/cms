@@ -8,9 +8,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Fleet {
-    private int id;
+
+    private Integer id;
+
     private String name;
+
     private String detail;
+
     private String telephone;
+
     private String diverAmount;
+
 }
+
