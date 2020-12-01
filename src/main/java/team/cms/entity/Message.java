@@ -11,10 +11,12 @@ public class Message {
 
     private Integer id;
 
-    private String detail;
+    private Integer senderID;
 
-    private String read;
+    private Integer recipientID;
 
-    private Integer accountId;
+    private String content;
+
+    private Boolean ifRead;
 
 }
