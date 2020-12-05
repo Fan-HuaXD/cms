@@ -8,6 +8,6 @@ import team.cms.entity.Admin;
 @Repository
 public interface AdminRepository {
 
-    Admin getAdminByAccountId(int accountId);
+    Admin getAdminByAccountId(Integer accountId);
 
 }

@@ -6,16 +6,4 @@
     <select id="getHotelByAccountId" resultType="team.cms.entity.Hotel">
         select * from hotel where accountId=#{accountId}
     </select>
-    <select id="getHotelByName" resultType="team.cms.entity.Hotel">
-        select * from hotel where name=#{name}
-    </select>
-    <insert id="add">
-        insert into hotel() values ()
-    </insert>
-    <delete id="removeByName">
-        delete from hotel where name=#{name};
-    </delete>
-    <update id="updateHotel">
-        update hotel set
-    </update>
 </mapper>

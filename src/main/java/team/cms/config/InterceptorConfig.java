@@ -11,23 +11,23 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new VisitorInterceptor())
-                .addPathPatterns("/user/**")
-                .addPathPatterns("/conference/**")
-                .addPathPatterns("/admin/**")
-                .addPathPatterns("/hotel/**")
-                .addPathPatterns("/driver/**");
+                .addPathPatterns("/api/user/**")
+                .addPathPatterns("/api/conference/**")
+                .addPathPatterns("/api/admin/**")
+                .addPathPatterns("/api/hotel/**")
+                .addPathPatterns("/api/driver/**");
 
         registry.addInterceptor(new UserInterceptor())
-                .addPathPatterns("/user/**")
-                .addPathPatterns("/conference/**");
+                .addPathPatterns("/api/user/**")
+                .addPathPatterns("/api/conference/**");
 
         registry.addInterceptor(new AdminInterceptor())
-                .addPathPatterns("/admin/**");
+                .addPathPatterns("/api/admin/**");
 
         registry.addInterceptor(new HotelInterceptor())
-                .addPathPatterns("/hotel/**");
+                .addPathPatterns("/api/hotel/**");
 
         registry.addInterceptor(new DriverInterceptor())
-                .addPathPatterns("/driver/**");
+                .addPathPatterns("/api/driver/**");
     }
 }

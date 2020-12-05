@@ -5,16 +5,7 @@
     <select id="getUserByAccountId" resultType="team.cms.entity.User">
         select * from user where account_id=#{accountId}
     </select>
-    <select id="getUserByName" resultType="team.cms.entity.User">
-        select * from user where name=#{name}
-    </select>
     <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
         insert into user(account_id, name, gender, birthday, resident_id_number, email, telephone, workplace) values (#{accountId}, #{name}, #{gender}, #{birthday}, #{residentIdNumber}, #{email}, #{telephone}, #{workplace})
     </insert>
-    <delete id="removeByName">
-        delete from user where name=#{name};
-    </delete>
-    <update id="updateUser">
-        update user set
-    </update>
 </mapper>

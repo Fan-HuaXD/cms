@@ -3,8 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="team.cms.repository.DriverRepository">
-
     <select id="getDriverByAccountId" resultType="team.cms.entity.Driver">
-        select * from driver by accountId=#{accountId}
+
     </select>
 </mapper>
