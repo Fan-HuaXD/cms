@@ -12,11 +12,11 @@ public class Conference {
 
     private Integer id;
 
-    private Integer usrId;
+    private String number;
+
+    private Integer userId;
 
     private String name;
-
-    private String inviteCode;
 
     private String detail;
 
@@ -28,14 +28,12 @@ public class Conference {
 
     private String enrollTime;
 
-    private String number;
+    private String inviteCode;
 
     private Integer hotelId;
 
     private Integer fleetId;
 
-    private Integer limit;
-
-    private Progress progress ;
+    private Progress progress;
 }
 

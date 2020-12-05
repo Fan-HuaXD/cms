@@ -7,15 +7,7 @@ import team.cms.entity.Hotel;
 @Mapper
 @Repository
 public interface HotelRepository {
+
     Hotel getHotelByAccountId(int accountId);
 
-    Hotel getHotelByName(String name);
-
-    void add(int accountId,String name,String address,String decription);
-
-    void add(Hotel hotel);
-
-    void removeByName(String name);
-
-    void updateHotel();
 }

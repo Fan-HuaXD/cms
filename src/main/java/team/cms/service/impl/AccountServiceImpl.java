@@ -6,7 +6,6 @@ import team.cms.repository.AccountRepository;
 import team.cms.service.AccountService;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {

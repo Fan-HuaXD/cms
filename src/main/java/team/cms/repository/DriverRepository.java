@@ -7,6 +7,7 @@ import team.cms.entity.Driver;
 @Mapper
 @Repository
 public interface DriverRepository {
+
     Driver getDriverByAccountId(int accountId);
 
 }

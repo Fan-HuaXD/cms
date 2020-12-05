@@ -3,7 +3,7 @@ package team.cms.util;
 import io.jsonwebtoken.*;
 import org.bouncycastle.util.encoders.Base64;
 import team.cms.entity.Account;
-import team.cms.result.Result;
+import team.cms.result.JWTParseResult;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -31,9 +31,9 @@ public class JsonWebTokenUtil {
         return builder.compact();
     }
 
-    public static Result<Account> parseJWT(String jwt) {
+    public static JWTParseResult<Account> parseJWT(String jwt) {
         if(jwt == null)
-            return Result.wrapErrorResult("未携带Token或Token为空");
+            return new JWTParseResult<Account>(false, "未携带Token或Token为空", null);
         Claims claims = null;
         try {
             SecretKey secretKey = generalKey();
@@ -41,11 +41,11 @@ public class JsonWebTokenUtil {
                     .setSigningKey(secretKey)
                     .parseClaimsJws(jwt)
                     .getBody();
-            return Result.wrapSuccessfulResult((Account)claims.get("account"));
+            return new JWTParseResult<Account>(false, "Token解析成功", (Account)claims.get("account"));
         } catch (ExpiredJwtException e) {
-            return  Result.wrapErrorResult("Token已过期");
+            return  new JWTParseResult<Account>(false, "Token已过期", null);
         } catch (Exception e) {
-            return Result.wrapErrorResult("Token不存在");
+            return new JWTParseResult<Account>(false, "Token非法", null);
         }
     }
 

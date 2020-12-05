@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import team.cms.entity.Account;
-import team.cms.result.Result;
+import team.cms.result.JWTParseResult;
 import team.cms.util.JsonWebTokenUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,11 +22,11 @@ public class VisitorInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         String jwt = request.getHeader(jwtName);
-        Result<Account> jwtParseResult = JsonWebTokenUtil.parseJWT(jwt);
+        JWTParseResult<Account> jwtParseResult = JsonWebTokenUtil.parseJWT(jwt);
 
         if(jwtParseResult.isSuccess()) {
             Account account = jwtParseResult.getData();
-            request.setAttribute("role", account.getRole());
+            request.setAttribute("account", account);
             return true;
         } else {
             response.setContentType("text/json");

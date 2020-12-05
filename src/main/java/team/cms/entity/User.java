@@ -24,9 +24,9 @@ public class User {
 
     private String residentIdNumber;
 
-    private String email;
-
     private String telephone;
+
+    private String email;
 
     private String workplace;
 

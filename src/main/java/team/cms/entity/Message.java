@@ -17,6 +17,6 @@ public class Message {
 
     private String content;
 
-    private Boolean ifRead;
+    private Boolean read;
 
 }
