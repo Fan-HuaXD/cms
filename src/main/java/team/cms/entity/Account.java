@@ -14,7 +14,7 @@ public class Account {
 
     private String username;
 
-    private String password;//push测试
+    private String password;
 
     private Role role;
 

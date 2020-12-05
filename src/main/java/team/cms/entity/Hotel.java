@@ -11,7 +11,7 @@ public class Hotel {
 
     private Integer id;
 
-    private Integer accountId;//push测试
+    private Integer accountId;
 
     private String name;
 
